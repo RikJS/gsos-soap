@@ -23,18 +23,8 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         return new ServletRegistrationBean(servlet, "/soap/*");
     }
 
-    @Bean(name = "countries")
-    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema countriesSchema) {
-        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-        wsdl11Definition.setPortTypeName("CountriesPort");
-        wsdl11Definition.setLocationUri("/soap/countries");
-        wsdl11Definition.setTargetNamespace("http://spring.io/guides/gs-producing-web-service");
-        wsdl11Definition.setSchema(countriesSchema);
-        return wsdl11Definition;
-    }
-
     @Bean(name = "bmi")
-    public DefaultWsdl11Definition defaultWsdl11Definition2(XsdSchema bmiSchema) {
+    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema bmiSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("BmiPort");
         wsdl11Definition.setLocationUri("/soap/bmi");
@@ -44,18 +34,13 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     }
 
     @Bean(name = "calorieIntake")
-    public DefaultWsdl11Definition defaultWsdl11Definition3(XsdSchema calorieIntakeSchema) {
+    public DefaultWsdl11Definition defaultWsdl11Definition2(XsdSchema calorieIntakeSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("CalorieIntakePort");
         wsdl11Definition.setLocationUri("/soap/calorieIntake");
         wsdl11Definition.setTargetNamespace("http://spring.io/guides/gs-producing-web-service");
         wsdl11Definition.setSchema(calorieIntakeSchema);
         return wsdl11Definition;
-    }
-
-    @Bean
-    public XsdSchema countriesSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("countries.xsd"));
     }
 
     @Bean
