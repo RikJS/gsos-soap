@@ -1,0 +1,38 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="getCalorieIntakeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="weight" type="xs:int"/>
+                <xs:element name="length" type="xs:int"/>
+                <xs:element name="age" type="xs:int"/>
+                <xs:element name="gender" type="tns:gender"/>
+                <xs:element name="activityLevel" type="tns:activityLevel"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCalorieIntakeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="response" type="xs:double"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="gender">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="MALE"/>
+            <xs:enumeration value="FEMALE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="activityLevel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SEDENTARY"/>
+            <xs:enumeration value="MODERATLY_ACTIVE"/>
+            <xs:enumeration value="ACTIVE"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
