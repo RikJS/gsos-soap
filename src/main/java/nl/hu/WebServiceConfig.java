@@ -28,7 +28,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("BmiPort");
         wsdl11Definition.setLocationUri("/soap/bmi");
-        wsdl11Definition.setTargetNamespace("http://spring.io/guides/gs-producing-web-service");
+        wsdl11Definition.setTargetNamespace("http://hu.nl/gsos/soap");
         wsdl11Definition.setSchema(bmiSchema);
         return wsdl11Definition;
     }
@@ -38,7 +38,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("CalorieIntakePort");
         wsdl11Definition.setLocationUri("/soap/calorieIntake");
-        wsdl11Definition.setTargetNamespace("http://spring.io/guides/gs-producing-web-service");
+        wsdl11Definition.setTargetNamespace("http://hu.nl/gsos/soap");
         wsdl11Definition.setSchema(calorieIntakeSchema);
         return wsdl11Definition;
     }

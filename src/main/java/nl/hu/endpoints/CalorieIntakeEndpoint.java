@@ -1,7 +1,5 @@
 package nl.hu.endpoints;
 
-import nl.hu.generated.GetBmiRequest;
-import nl.hu.generated.GetBmiResponse;
 import nl.hu.generated.GetCalorieIntakeRequest;
 import nl.hu.generated.GetCalorieIntakeResponse;
 import nl.hu.models.Person;
@@ -14,7 +12,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 @Endpoint
 public class CalorieIntakeEndpoint {
-    private static final String NAMESPACE_URI = "http://spring.io/guides/gs-producing-web-service";
+    private static final String NAMESPACE_URI = "http://hu.nl/gsos/soap";
 
     private CalorieIntakeRepository calorieIntakeRepository;
 
